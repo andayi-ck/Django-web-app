@@ -1,0 +1,73 @@
+
+Django Crash Course - Python Web Framework - FreeCodeCamp
+
+1.BEGAN BY RUNNING "pip install pipenv" on terminal
+            --which is a virtual environment that is going to store all the different versions
+            of the packages that are going to be used in this application
+
+2.--once finished installing "pip pipenv",,,we are going to run "pipenv install django" on terminal.
+        --This adds two files in the file directory; 'Pipfile' and 'Pipfilelock'.These are the files that are going to store
+        the versions of the different dependencies
+
+
+3.--To activate and use the virtual environments, we are going to run; "pipenv shell"
+
+        
+4.Created the first django project by running "django-admin startproject --nameOfProject--"
+        --"django-admin startproject firstproject" .
+        This creates a new folder \firstproject\, called "firstproject" and file \firstproject\manage.py 'manage.py', with another subfolder \firstproject\firstproject\ "firstproject" and other files
+            '__init__.py, asgi.py, settings.py, urls.py, wsgi.py' it
+
+5.CREATING apps - an app in django is a collection of functionalities that focus on a particular aspect of our overall project., ie we can have a separate app for
+    authentication, messaging etc.To create one, we proceed as follows:
+    On terminal of this folder, run the command "python manage.py startapp --nameOfOurApp--"
+    "python manage.py startapp firstapp" --This creates a new folder, "firstapp" inside '\firstproject\firstapp' with a folder 'migrations' , \firstproject\firstapp\migrations\ and a number of files in the
+        'firstapp' folder.
+
+6.WEB FRAMEWORK - structured way of building a website
+
+7.MVT   - Model - processes the data - represents how data is structured, stored and retrived.(databse part of the application)
+        - VIEW  - responsible for the User interface part to handle user requets and perform other
+                    tasks.(logic)
+        -Template - User interface mostly in regards to the Html,css etc
+
+8.VIEWS - went to the file - views.py 'Django\firstproject\firstapp\views.py'
+            --if there was an error on line 1 in the views.py, see how it was handled at 8:15 of the video
+        We can create "Views" in django in basically two ways; Function-based views (Line 2, 6, 7, 8) and class-based view from
+            lines (4, 10, 11, 12)where we work with inheritance
+        When the user sends a 'Get' request to this VIEW, the http response is going to be returned,
+            Thus the next step is to linking the view functions and classes to addresses.This is reffered to as URL Mapping.
+
+9.Went to \firstapp\ folder and created a new file 'urls.py' \firstproject\firstapp\urls.py
+        --finished mapping the urls at the 'app level', but also need to map it at the 'project level'
+
+10.Headed over to the urls.py in \firstproject\firstproject\urls.py and added line 22
+        At the 'project' level, we are also going to add our app to the 'settings.py' - \firstproject\firstproject\settings.py and added line
+            40.
+
+    TO RUN THIS DJANGO APP, WE GO TO THE terminal of the folder
+    C:\Users\ADMIN\.vscode\.vscode\Django\firstproject>
+    and run "python manage.py runserver"
+
+    --all this should be done inside the virtual environment at "pipenv shell"
+
+11.REQUEST AND RESPONSE OBJECTS - used to communicate the user with the application
+
+12.MODELS - dEALS with the database part of the application.To create 'Models' they are going to be
+            inherit from the django model class.
+
+            --opened the models.py in \firstproject\firstapp\models.py and added database model 'MenuItem'
+
+            thus we will begin by running "python manage.py makemigrations" and "python manage.py migrate" to effectively create/update changes into
+                the database.
+                -a table (MenuItem) with rows (name) and (price) is created in the database.
+                as seen below
+                        (Django-1BfGaCmG) C:\Users\ADMIN\.vscode\.vscode\Django\firstproject>python manage.py makemigrations
+                        Migrations for 'firstapp':
+                            firstapp\migrations\0001_initial.py
+                                + Create model MenuItem
+            
+            --this action basically populates the existing database 'db.sqlite3' which was created at the first instance inside
+                \Django\firstproject\db.sqlite3
+            --django by default uses an sqlite database in its setup.
+            
