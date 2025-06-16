@@ -8,3 +8,15 @@ from django.db import models
 class MenuItem(models.Model):
     name = models.CharField(max_length=255)
     price = models.IntegerField()
+
+
+#below is a table 'Reservation' with 5 different columns that is going to be populated
+#       using a form, created in the file Django\firstproject\firstapp\forms.py
+class Reservation(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    guest_count = models.IntegerField()
+    reservation_time = models.DateField(auto_now=True)
+    comments = models.CharField(max_length=1000)
+
+
