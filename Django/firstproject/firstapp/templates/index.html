@@ -11,9 +11,9 @@
             <!--Django already contains some inbuilt tags thus no need of
             defining them
             -->
+            {% csrf_token %}
+            {{ form.as_p }}
 
-
-            
             <button type="Submit"></button>
         </form>
 
