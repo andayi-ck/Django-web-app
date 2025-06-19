@@ -15,3 +15,7 @@ class HelloEthiopia(View):
 def home(request):
     form = ReservationForm()
 
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+
