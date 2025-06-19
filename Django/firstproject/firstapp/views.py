@@ -11,3 +11,7 @@ def hello_world(request):
 class HelloEthiopia(View):
     def get(self, request):
         return HttpResponse("Hello Ethiopia")
+
+def home(request):
+    form = ReservationForm()
+
